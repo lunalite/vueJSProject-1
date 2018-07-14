@@ -1,21 +1,22 @@
 <template>
   <div class='columns'>
     <div class='column is-one-third' v-for='post in posts' v-bind:key='post.id'>
-      <div class='card'>
-        <div class='card-content'>
-          <h3>{{ post.title }}</h3>
-          {{ post.content }}
-        </div>
-        <footer class='card-footer'>
-          <a class='card-footer-item' v-bind:href='post.link' target='_blank'>Read More</a>
-        </footer>
-      </div>
+      <Post :link="post.link">
+        <h3 slot="title">{{ post.title }}</h3>
+        <span slot="content">{{ post.content }}</span>
+      </Post>
     </div>
   </div>
+
 </template>
 
 <script>
+import Post from './Post.vue'
+
 export default {
+  components: {
+    Post
+  },
   data () {
     return {
       posts: [
