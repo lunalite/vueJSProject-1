@@ -1,11 +1,11 @@
 <template>
-  <div class='card'>
-    <div class='card-content'>
+  <div class="card">
+    <div class="card-content">
       <slot name="title"></slot>
       <slot name="content"></slot>
     </div>
-    <footer class='card-footer'>
-      <a class='card-footer-item' v-bind:href='link' target='_blank'>Read More</a>
+    <footer class="card-footer">
+      <a class="card-footer-item" v-bind:href="link" target="_blank">Read More</a>
     </footer>
   </div>
 </template>
@@ -17,14 +17,14 @@ export default {
 </script>
 
 <style scoped>
-  .card{
-    padding-bottom: 40px;
-    height:100%;
-  }
-  footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-  }
+.card {
+  padding-bottom: 40px;
+  height: 100%;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
 </style>

@@ -54,6 +54,7 @@
 
 <script>
 import appService from '../app.service'
+import eventBus from '../event-bus'
 
 export default {
   data () {
@@ -70,11 +71,11 @@ export default {
         appService.getProfile()
           .then(profile => {
             this.profile = profile
-            console.log(this)
           })
       } else {
         this.profile = {}
       }
+      eventBus.$emit('authStatusUpdate', val)
     }
   },
   methods: {
